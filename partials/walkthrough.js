@@ -2,24 +2,27 @@
 import React, { Component } from 'react';
 import styles from '../styles/walkthroughStyles.js'
 import {
-  AppRegistry,
   Text,
   View,
-  TextInput,
-  TouchableHighlight,
-  Image,
-  ScrollView
+  ScrollView,
+  TouchableHighlight
 } from 'react-native';
 
-const WalkthroughView = ({ walkthroughP, game, dungeon }) => 
+const Walkthrough = ({ walkthrough, game, dungeon, back }) => 
   (
-    <View style={styles.searchSection}>
-      <ScrollView>
-        <Text> {walkthrough} </Text>
-      </ScrollView>
+    <View style={styles.walkSection}>
+         <TouchableHighlight style={styles.button} onPress={back}>
+            <Text style={styles.backBtn}> Back </Text>
+          </TouchableHighlight>
+          <Text style={styles.walkHeader}>{game}  -  {dungeon}</Text>
+        <ScrollView style={styles.walkScroll}>
+          {walkthrough.map((p, i) => {
+            return <Text style={styles.walkText} key={i}> {p} </Text> 
+          })} 
+        </ScrollView>
     </View>
   );
   
 
 
-export default WalkthroughView
+export default Walkthrough

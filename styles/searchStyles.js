@@ -5,21 +5,27 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'stretch',
-    backgroundColor: 'darkgreen',
+    backgroundColor: 'green',
   },
   header: {
-    flex: 2,
+    flex: 1.5,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 80,
+    marginTop: 20
   },
   footer: {
-    flex: 1
+    flex: .5,
+    justifyContent: 'center'
   },
   searchSection: {
     flex: 6,
-    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  loading_gif: {
     alignItems: 'center',
+    justifyContent: 'center',
+    height: 200,
+    width: 200
   },
   input: {
     height: 40, 
@@ -36,14 +42,15 @@ const styles = StyleSheet.create({
   inputHeader: {
     fontSize: 25,
     textAlign: 'center',
-    fontFamily: 'Party LET',
+    fontFamily: 'Bodoni 72 Smallcaps',
     margin: 10
   },
   welcome: {
-    fontSize: 40,
+    fontSize: 30,
     textAlign: 'center',
-    fontFamily: 'Party LET',
+    fontFamily: 'Bodoni 72 Smallcaps',
     margin: 10,
+
   },
   instructions: {
     textAlign: 'center',
@@ -59,13 +66,27 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
   triforce: {
-    height: 82,
-    width: 100
+    height: 41,
+    width: 50
   },
   sword: {
     height: 50,
     width: 50
-  }
+  },
+   loading_text: {
+    fontSize: 20,
+    marginBottom: 10,
+    fontFamily: 'Bodoni 72 Smallcaps',
+   },
+   loadingSection: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 6,
+   },
+   notFound: {
+    fontSize: 20,
+     fontFamily: 'Bodoni 72 Smallcaps',
+   }
 });
 
 export default styles;

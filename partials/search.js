@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styles from '../styles/searchStyles.js'
-import WalkthroughView from './walkthrough'
+import Walkthrough from './walkthrough'
+import Loading from './loading'
+import Inputs from './inputs'
 import {
   AppRegistry,
   Text,
@@ -17,11 +19,11 @@ export default class SearchView extends Component {
     this.state = { 
       game: '', 
       dungeon: '',
+      walkthrough: '',
       searchview: true,
       loading: false,
       walkview: false,
-      notFound: false,
-      walkthrough: ''
+      notFound: false
     };
     this.search = this.search.bind(this)
   }
@@ -45,52 +47,38 @@ export default class SearchView extends Component {
     }
 
   render() {
-    let notFound = this.state.notFound ? <Text>Not Found! Please Try Again</Text> : ''
+    let notFound = this.state.notFound ? <Text style={styles.notFound}>Not Found! Please Try Again</Text> : ''
     if(this.state.searchview) {
       return (
-        <View style={styles.searchSection}>
-          <Text>
-            {notFound}
-          </Text>
-          <Text style={styles.inputHeader}>
-            Game
-          </Text>
-          <TextInput
-            style={styles.input}
-            onChangeText={ (game) => { this.setState({ game }) } }
-            value={this.state.game}
-          />
-          <Text style={styles.inputHeader}>
-            Dungeon
-          </Text>
-          <TextInput
-            style={styles.input}
-            onChangeText={ (dungeon) => { this.setState({ dungeon }) } }
-            value= {this.state.dungeon}
-          />
-         <TouchableHighlight style={styles.button} onPress={this.search}>
-            <Image
-              style={styles.sword}
-              source={require('../IMG/mastersword.png')}
-            />
-          </TouchableHighlight>
-        </View>
+        <Inputs 
+          game={this.state.game}
+          dungeon={this.state.dungeon}
+          onChangeGame={ (game) => { this.setState({ game }) } }
+          onChangeDungeon={ (dungeon) => { this.setState({ dungeon }) } }
+          notFound={notFound}
+          search={this.search}
+        />
       );
     } else if(this.state.loading) {
         return (
-          <View style={styles.searchSection}>
-            <Text>Loading...</Text>
-          </View>
+          <Loading />
         );     
     } else if(this.state.walkview) {
       return (
-        <View style={styles.searchSection}>
-          <ScrollView>
-            { this.state.walkthrough.map((p, i) => {
-              return <Text key={i}> {p} </Text> 
-            })} 
-          </ScrollView>
-        </View>
+        <Walkthrough 
+          walkthrough={this.state.walkthrough}
+          game={this.state.game}
+          dungeon={this.state.dungeon}
+          back={() => { this.setState({
+            game: '', 
+            dungeon: '',
+            walkthrough: '',
+            searchview: true,
+            loading: false,
+            walkview: false,
+            notFound: false
+          })}}
+        />
       );
     }
   }
