@@ -1,9 +1,11 @@
-
 import React, { Component } from 'react';
 import styles from '../styles/walkthroughStyles.js'
 import {
   Text,
   View,
+  TextInput,
+  TouchableHighlight,
+  Image,
   ScrollView
 } from 'react-native';
 
