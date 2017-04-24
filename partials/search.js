@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from '../styles/searchStyles.js'
 import Walkthrough from './walkthrough'
 import Loading from './loading'
+import Inputs from './inputs'
 import {
   AppRegistry,
   Text,
@@ -29,6 +30,7 @@ export default class SearchView extends Component {
 
   search() {
     this.setState({ loading: true, searchview: false })
+    // if(this.state.game === 'The Legend of Zelda')
     let game = this.state.game.split(' ').join('-')
     let dungeon = this.state.dungeon.split(' ').join('-')
     fetch(`http://localhost:8080/${game}/${dungeon}`)
@@ -49,33 +51,14 @@ export default class SearchView extends Component {
     let notFound = this.state.notFound ? <Text>Not Found! Please Try Again</Text> : ''
     if(this.state.searchview) {
       return (
-        <View style={styles.searchSection}>
-          <Text>
-            {notFound}
-          </Text>
-          <Text style={styles.inputHeader}>
-            Game
-          </Text>
-          <TextInput
-            style={styles.input}
-            onChangeText={ (game) => { this.setState({ game }) } }
-            value={this.state.game}
-          />
-          <Text style={styles.inputHeader}>
-            Dungeon
-          </Text>
-          <TextInput
-            style={styles.input}
-            onChangeText={ (dungeon) => { this.setState({ dungeon }) } }
-            value= {this.state.dungeon}
-          />
-         <TouchableHighlight style={styles.button} onPress={this.search}>
-            <Image
-              style={styles.sword}
-              source={require('../IMG/mastersword.png')}
-            />
-          </TouchableHighlight>
-        </View>
+        <Inputs 
+          game={this.state.game}
+          dungeon={this.state.dungeon}
+          onChangeGame={ (game) => { this.setState({ game }) } }
+          onChangeDungeon={ (dungeon) => { this.setState({ dungeon }) } }
+          notFound={notFound}
+          search={this.search}
+        />
       );
     } else if(this.state.loading) {
         return (
