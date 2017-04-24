@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from '../styles/searchStyles.js'
-import WalkthroughView from './walkthrough'
+import Walkthrough from './walkthrough'
 import Loading from './loading'
 import {
   AppRegistry,
@@ -18,11 +18,11 @@ export default class SearchView extends Component {
     this.state = { 
       game: '', 
       dungeon: '',
+      walkthrough: '',
       searchview: true,
       loading: false,
       walkview: false,
-      notFound: false,
-      walkthrough: ''
+      notFound: false
     };
     this.search = this.search.bind(this)
   }
@@ -83,13 +83,11 @@ export default class SearchView extends Component {
         );     
     } else if(this.state.walkview) {
       return (
-        <View style={styles.searchSection}>
-          <ScrollView>
-            { this.state.walkthrough.map((p, i) => {
-              return <Text key={i}> {p} </Text> 
-            })} 
-          </ScrollView>
-        </View>
+        <Walkthrough 
+          walkthrough={this.state.walkthrough}
+          game={this.state.game}
+          dungeon={this.state.dungeon}
+        />
       );
     }
   }

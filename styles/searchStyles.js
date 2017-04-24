@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   footer: {
-    flex: 1
+    flex: .5,
+    justifyContent: 'center'
   },
   searchSection: {
     flex: 6,
@@ -23,8 +24,8 @@ const styles = StyleSheet.create({
   loading_gif: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: 120,
-    width: 120
+    height: 200,
+    width: 200
   },
   input: {
     height: 40, 
@@ -81,7 +82,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flex: 6,
-   }
+   },
+   walkSection: {
+    flex: 6,
+    alignItems: 'center',
+   },
+   walkHeader: {
+    fontFamily: 'Bodoni 72 Smallcaps',
+    fontSize: 20
+   },
+    walkScroll: {
+      backgroundColor: 'white',
+      paddingLeft: 20,
+      paddingRight: 20,
+      paddingTop: 10
+    },
+    walkText: {
+      fontFamily: 'Bodoni 72',
+      fontSize: 15
+    }
 });
 
 export default styles;
