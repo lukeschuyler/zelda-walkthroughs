@@ -10,7 +10,7 @@
 3. Cheerio Scraper
 
 <div align="center">
-  <img src="IMG/Search.png" /> <img style="{display: inline}" src="img/Screen Shot 2017-04-13 at 11.06.05 PM.png" />
-  <img src="img/Walkthrough.png" /> <img style="{display: inline}" src="img/Screen Shot 2017-04-13 at 11.06.40 PM.png" />
+  <img src="IMG/Search.png" /> 
+  <img src="IMG/Walkthrough.png" /> 
 </div>
 
