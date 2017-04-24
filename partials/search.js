@@ -30,7 +30,6 @@ export default class SearchView extends Component {
 
   search() {
     this.setState({ loading: true, searchview: false })
-    // if(this.state.game === 'The Legend of Zelda')
     let game = this.state.game.split(' ').join('-')
     let dungeon = this.state.dungeon.split(' ').join('-')
     fetch(`http://localhost:8080/${game}/${dungeon}`)
@@ -48,7 +47,7 @@ export default class SearchView extends Component {
     }
 
   render() {
-    let notFound = this.state.notFound ? <Text>Not Found! Please Try Again</Text> : ''
+    let notFound = this.state.notFound ? <Text style={styles.notFound}>Not Found! Please Try Again</Text> : ''
     if(this.state.searchview) {
       return (
         <Inputs 
@@ -70,6 +69,15 @@ export default class SearchView extends Component {
           walkthrough={this.state.walkthrough}
           game={this.state.game}
           dungeon={this.state.dungeon}
+          back={() => { this.setState({
+            game: '', 
+            dungeon: '',
+            walkthrough: '',
+            searchview: true,
+            loading: false,
+            walkview: false,
+            notFound: false
+          })}}
         />
       );
     }

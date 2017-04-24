@@ -8,10 +8,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'green',
   },
   header: {
-    flex: 2,
+    flex: 1.5,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 20
   },
   footer: {
     flex: .5,
@@ -83,24 +83,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 6,
    },
-   walkSection: {
-    flex: 6,
-    alignItems: 'center',
-   },
-   walkHeader: {
-    fontFamily: 'Bodoni 72 Smallcaps',
-    fontSize: 20
-   },
-    walkScroll: {
-      backgroundColor: 'white',
-      paddingLeft: 20,
-      paddingRight: 20,
-      paddingTop: 10
-    },
-    walkText: {
-      fontFamily: 'Bodoni 72',
-      fontSize: 15
-    }
+   notFound: {
+    fontSize: 20,
+     fontFamily: 'Bodoni 72 Smallcaps',
+   }
 });
 
 export default styles;
