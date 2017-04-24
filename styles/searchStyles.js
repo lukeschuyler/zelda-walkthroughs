@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     marginTop: 80,
   },
   footer: {
-    flex: 2
+    flex: 1
   },
   searchSection: {
     flex: 6,
@@ -22,16 +22,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   input: {
-    height: 30, 
+    height: 40, 
     borderColor: 'gray', 
     borderWidth: 1, 
     marginLeft: 20, 
     marginRight: 20, 
     marginBottom: 15,
-    paddingLeft: 5, 
-    paddingRight: 5,
+    padding: 5,
     color: 'gray',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    borderRadius: 10,
   },
   inputHeader: {
     fontSize: 25,
