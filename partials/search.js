@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from '../styles/searchStyles.js'
 import WalkthroughView from './walkthrough'
+import Loading from './loading'
 import {
   AppRegistry,
   Text,
@@ -78,9 +79,7 @@ export default class SearchView extends Component {
       );
     } else if(this.state.loading) {
         return (
-          <View style={styles.searchSection}>
-            <Text>Loading...</Text>
-          </View>
+          <Loading />
         );     
     } else if(this.state.walkview) {
       return (

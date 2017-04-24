@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     flex: 2,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 80,
+    marginTop: 20,
   },
   footer: {
     flex: 1
@@ -20,6 +20,13 @@ const styles = StyleSheet.create({
     flex: 6,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'white'
+  },
+  loading_gif: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 120,
+    width: 120
   },
   input: {
     height: 40, 
@@ -59,8 +66,8 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
   triforce: {
-    height: 82,
-    width: 100
+    height: 41,
+    width: 50
   },
   sword: {
     height: 50,
