@@ -9,7 +9,7 @@ import {
 
 const Loading = ({ walkthroughP, game, dungeon }) => 
   (
-    <View style={styles.searchSection}>
+    <View style={styles.loadingSection}>
       <Text style={styles.loading_text}>Loading...</Text>
       <Image 
         style={styles.loading_gif}

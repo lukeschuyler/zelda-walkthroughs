@@ -74,7 +74,13 @@ const styles = StyleSheet.create({
   },
    loading_text: {
     fontSize: 20,
-    marginBottom: 10
+    marginBottom: 10,
+    fontFamily: 'Bodoni 72 Smallcaps',
+   },
+   loadingSection: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 6,
    }
 });
 
