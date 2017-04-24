@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from '../styles/walkthroughStyles.js'
+import styles from '../styles/searchStyles.js'
 import {
   Text,
   View,
@@ -9,20 +9,37 @@ import {
   ScrollView
 } from 'react-native';
 
-const Walkthrough = ({ walkthrough, game, dungeon }) => 
+const Inputs = ({ game, dungeon, onChangeGame, onChangeDungeon, notFound, search }) => 
   (
-    <View style={styles.walkSection}>
-        <View>
-          <Text style={styles.walkHeader}>{game}  -  {dungeon}</Text>
-        </View>
-        <ScrollView style={styles.walkScroll}>
-          {walkthrough.map((p, i) => {
-            return <Text style={styles.walkText} key={i}> {p} </Text> 
-          })} 
-        </ScrollView>
+    <View style={styles.searchSection}>
+      <Text>
+        {notFound}
+      </Text>
+      <Text style={styles.inputHeader}>
+        Game
+      </Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeGame}
+        value={game}
+      />
+      <Text style={styles.inputHeader}>
+        Dungeon
+      </Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeDungeon}
+        value= {dungeon}
+      />
+     <TouchableHighlight style={styles.button} onPress={search}>
+        <Image
+          style={styles.sword}
+          source={require('../IMG/mastersword.png')}
+        />
+      </TouchableHighlight>
     </View>
   );
   
 
 
-export default Walkthrough
+export default Inputs
