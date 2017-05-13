@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from '../styles/searchStyles.js'
 import {
   Text,
-  View,
+  KeyboardAvoidingView,
   TextInput,
   TouchableHighlight,
   Image,
@@ -11,7 +11,7 @@ import {
 
 const Inputs = ({ game, dungeon, onChangeGame, onChangeDungeon, notFound, search }) => 
   (
-    <View style={styles.searchSection}>
+    <KeyboardAvoidingView behavior="padding" style={styles.searchSection}>
       <Text>
         {notFound}
       </Text>
@@ -37,7 +37,7 @@ const Inputs = ({ game, dungeon, onChangeGame, onChangeDungeon, notFound, search
           source={require('../IMG/mastersword.png')}
         />
       </TouchableHighlight>
-    </View>
+    </KeyboardAvoidingView>
   );
   
 

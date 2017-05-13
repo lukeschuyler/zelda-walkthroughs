@@ -30,9 +30,9 @@ export default class SearchView extends Component {
 
   search() {
     this.setState({ loading: true, searchview: false })
-    let game = this.state.game.split(' ').join('-')
-    let dungeon = this.state.dungeon.split(' ').join('-')
-    fetch(`http://localhost:8080/${game}/${dungeon}`)
+    let game = this.state.game.split(' ').join('-').toLowerCase()
+    let dungeon = this.state.dungeon.split(' ').join('-').toLowerCase()
+    fetch(`https://zelda-api.herokuapp.com/${game}/${dungeon}`)
       .then(response => response.json())
       .then(json => {
         if (json.length <= 0) {
